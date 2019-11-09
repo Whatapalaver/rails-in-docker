@@ -15,6 +15,10 @@ And an increasing number of mini-app test branches:
 1. namespaced-event-article - 
 2. polymorphic-namespaced - polymorphic item-references with implementation in Articles only. Uses accepts_nested_attributes_for to handle creation of new item references within an article.
 3. polymorphic-validations - Handles the creation of item_references in a more manual fashion in order to ensure uniqueness validation.
+4. 
+This is a barebones installation of Rails 5.2 running in a Ruby 2.4 Docker container. This branch includes rspec, cucumber, factory-bot and database-cleaner for BDD testing. The setup follows the following [instruction from Semaphore](https://semaphoreci.com/community/tutorials/setting-up-a-bdd-stack-on-a-rails-5-application).
+
+The idea is that I can use this to rapidly spin up some Rails mini-projects for deliberate practice with BDD.
 
 ## Initial Setup:
 
@@ -30,4 +34,7 @@ The bundle install action has been extracted away from the Dockerfile as this gr
 
 ### Running Tests
 
+There is one passing cucumber test in features.
+
 - Run all tests with: `docker-compose run web bundle exec rake`
+- Run just the cucumber tests with: `docker-compose run web bundle exec cucumber`
