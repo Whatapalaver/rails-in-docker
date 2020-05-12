@@ -3,12 +3,18 @@
 This is an installation of Rails 5.2 running in a Ruby 2.4.9 Docker container.
 Webpacker has been added so I can experiment with javascript handling using webpack rather than asset pipeline.
 
-There are a few branches:
+There are a few starter branches:
 
 1. Master - A Rails 5.2 install with webpacker and cucumber-bdd. This is a good starting point for spinning up functional rails apps with BDD
 2. plain-ror - A simple rails 5.2 install
 3. webpacker - This has webpacker installed from the Gemfile so that I can see the changes in how javascript is handled
 4. cucumber-bdd - The rails 5.2 install with the addition of rspec, cucumber, factory-bot and database-cleaner for BDD testing. The setup follows the following [instruction from Semaphore](https://semaphoreci.com/community/tutorials/setting-up-a-bdd-stack-on-a-rails-5-application).
+
+And an increasing number of mini-app test branches:
+
+1. namespaced-event-article - 
+2. polymorphic-namespaced - polymorphic item-references with implementation in Articles only. Uses accepts_nested_attributes_for to handle creation of new item references within an article.
+3. polymorphic-validations - Handles the creation of item_references in a more manual fashion in order to ensure uniqueness validation.
 
 ## Initial Setup:
 
