@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Systemnumber:</strong>
+  <%= @museum_object.systemNumber %>
+</p>
+
+<p>
+  <strong>Objecttype:</strong>
+  <%= @museum_object.objectType %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @museum_object.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @museum_object.image_id %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @museum_object.description %>
+</p>
+
+<%= link_to 'Edit', edit_admin_museum_object_path(@museum_object) %> |
+<%= link_to 'Back', admin_museum_objects_path %>
