@@ -10,9 +10,18 @@ class Admin::MuseumObjectsController < ApplicationController
   def show
   end
 
+
   # GET /museum_objects/new
   def new
-    @museum_object = MuseumObject.new
+    @museum_object = MuseumObject.new.tap do |mo|
+      mo.attributes = {
+        systemNumber: params[:systemNumber],
+        objectType: params[:objectType],
+        title: params[:_primaryTitle],
+        image_id: params[:_primaryImageId],
+        description: ''
+      }
+    end
   end
 
   # GET /museum_objects/1/edit
@@ -56,4 +65,5 @@ class Admin::MuseumObjectsController < ApplicationController
     def museum_object_params
       params.require(:museum_object).permit(:systemNumber, :objectType, :title, :image_id, :description)
     end
+
 end
