@@ -27,12 +27,8 @@
     <% @objects.each do |ob| %>
       <div class="row mt-5">
         <div class="col-lg-6">
-          <% if ob['_primaryImageId'] %>
-            <%= image_tag("https://framemark.vam.ac.uk/collections/#{ob['_primaryImageId']}/full/!140,140/0/default.jpg") %>
-          <% else %>
-            <%= image_tag("https://placehold.it/140x140?text=No+Image") %>
-          <% end %>
-          <%= ob["_primaryTitle"] %>
+          <%= image_tag(ob.thumbnail_url) %>
+          <%= ob._primaryTitle %>
           <%= link_to 'Import', new_admin_museum_object_path(ob) %>
         </div>
       </div>
