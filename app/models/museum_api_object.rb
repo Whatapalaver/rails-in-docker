@@ -1,10 +1,13 @@
 class MuseumApiObject
-  # include ActiveModel::Model
+  include ActiveModel::Model
 
-  attr_accessor :systemNumber, :objectType, :_primaryImageId, :_primaryTitle
+  attr_accessor :systemNumber, :objectType, :primaryImageId, :primaryTitle
 
-  def initialize(h)
-    h.each {|k, v| public_send("#{k}=", v)}
+  def initialize(attributes)
+    @systemNumber = attributes['systemNumber']
+    @objectType = attributes['objectType']
+    @primaryImageId = attributes['_primaryImageId']
+    @primaryTitle = attributes['_primaryTitle']
   end
 
   def self.fetch_by_search_term(search_term)
@@ -19,8 +22,8 @@ class MuseumApiObject
 
 
   def thumbnail_url
-    if _primaryImageId
-      "https://framemark.vam.ac.uk/collections/#{_primaryImageId}/full/!140,140/0/default.jpg"
+    if primaryImageId
+      "https://framemark.vam.ac.uk/collections/#{primaryImageId}/full/!140,140/0/default.jpg"
     else
       'https://placehold.it/140x140?text=No+Image'
     end

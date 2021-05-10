@@ -17,8 +17,8 @@ class Admin::MuseumObjectsController < ApplicationController
       mo.attributes = {
         systemNumber: params[:systemNumber],
         objectType: params[:objectType],
-        title: params[:_primaryTitle],
-        image_id: params[:_primaryImageId],
+        title: params[:title],
+        image_id: params[:image_id],
         description: ''
       }
     end

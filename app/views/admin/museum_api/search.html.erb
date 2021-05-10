@@ -28,8 +28,11 @@
       <div class="row mt-5">
         <div class="col-lg-6">
           <%= image_tag(ob.thumbnail_url) %>
-          <%= ob._primaryTitle %>
-          <%= link_to 'Import', new_admin_museum_object_path(ob) %>
+          <%= ob.primaryTitle %>
+          <%= link_to 'Import', new_admin_museum_object_path(:systemNumber => ob.systemNumber,
+                                                             :objectType => ob.objectType,
+                                                             :title => ob.primaryTitle, 
+                                                             :image_id => ob.primaryImageId ) %>
         </div>
       </div>
     <% end %> 
